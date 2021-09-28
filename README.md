@@ -1,27 +1,40 @@
-# AngularPwa
+## Thêm PWA vào Angular
+Để thiết lập Angular service worker trong dự án, hãy sử dụng lệnh CLI ng add @ angle / pwa. Lệnh “ng add angular pwa” sẽ hiện thực hoá việc này
+ **ng add @angular/pwa**
+ 
+- Lệnh “ng add angular pwa” được chạy đã tạo ra tệp ngsw-config.json. Nó chỉ chịu trách nhiệm service workers. Đồng thời, service workers cũng đã được tự động thêm vào file app.module.ts.
+ 
+ // app.module.ts
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+@NgModule({
+  declarations: [...],
+  imports: [
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+  ],
+  providers: [...],
+  bootstrap: [...],
+  schemas: [...]
+})
 
-## Development server
+export class AppModule { }
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Build & Cấu hình Production với http-server
+Cài đặt http-server global từ NPM: **npm install -g http-server**
 
-## Code scaffolding
+Để build ứng dụng cho môi trường production, chạy lệnh sau: **npm run build-prod**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Sau khi chạy lệnh, bản sẽ có bản build trong folder dist/angular-pwa. Tiếp theo, chúng ta sẽ chạy ứng dụng angular PWA sử dụng http-server
 
-## Build
+Vào trong thư mục prod build: **cd dist/<project-name>**
+  
+Vì ng serve không hoạt động với service worker, bạn phải sử dụng một máy chủ HTTP riêng để kiểm tra local dự án của mình. Sử dụng bất kỳ máy chủ HTTP nào. Ví dụ sau sử dụng gói máy chủ http từ npm. Để giảm khả năng xung đột và tránh phân phát nội dung cũ, hãy kiểm tra trên một cổng chuyên dụng và tắt bộ nhớ đệm. Để cung cấp thư mục chứa các tệp web của bạn với http-server. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Để chạy lên bản build, thực hiện dòng lệnh sau: **http-server -p 8080**
+  
+Lệnh trên sẽ mở angular app theo đường dẫn http://127.0.0.1:8080 
 
-## Running unit tests
+## link refe.
+https://angular.io/guide/service-worker-getting-started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
