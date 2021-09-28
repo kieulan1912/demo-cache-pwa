@@ -11,11 +11,11 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [...], <br>
   imports: [ <br>
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
-  providers: [...],
-  bootstrap: [...],
-  schemas: [...]
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) <br>
+  ],<br>
+  providers: [...], <br>
+  bootstrap: [...],<br>
+  schemas: [...]<br>
 })
 
 export class AppModule { }
