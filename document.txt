@@ -1,0 +1,27 @@
+1: Thêm PWA vào Angular: ng add @angular/pwa
+
+2: 
+// app.module.ts
+- import { ServiceWorkerModule } from '@angular/service-worker';
+- Thêm ServiceWorkerModule.register
+	@NgModule({
+  	declarations: [...],
+  	imports: [
+    		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+  	],
+})
+
+//app.component.ts
+  constructor(   
+    private update: SwUpdate,
+    private appRef: ApplicationRef,
+    private swPush: SwPush,    
+  ) {
+    this.updateClient();
+    this.checkUpdate();
+  }
+
+3: build ứng dụng trong môi trường product 
+  npm run buid-prod
+
+Link refer: https://viblo.asia/p/build-progressive-web-app-pwa-with-angular-aWj53GYo56m
