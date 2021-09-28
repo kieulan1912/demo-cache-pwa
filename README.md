@@ -9,8 +9,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [...],
-  imports: [
+  declarations: [...], <br>
+  imports: [ <br>
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [...],
@@ -35,6 +35,6 @@ Vì ng serve không hoạt động với service worker, bạn phải sử dụn
   
 Lệnh trên sẽ mở angular app theo đường dẫn http://127.0.0.1:8080 
 
-## link refe.
+## link refer.
 https://angular.io/guide/service-worker-getting-started
 
