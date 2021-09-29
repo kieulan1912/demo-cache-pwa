@@ -36,7 +36,7 @@ Vì ng serve không hoạt động với service worker, bạn phải sử dụn
   
 Lệnh trên sẽ mở angular app theo đường dẫn http://127.0.0.1:8080 
 
-## link refer
+## Link refer
 https://angular.io/guide/service-worker-getting-started <br>
 https://viblo.asia/p/build-progressive-web-app-pwa-with-angular-aWj53GYo56m
 
