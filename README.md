@@ -10,7 +10,7 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [...], 
-  imports: [ <br>
+  imports: [ 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) 
   ],<br>
   providers: [...], 
