@@ -3,7 +3,7 @@
  **ng add @angular/pwa**
  
 - Lệnh “ng add angular pwa” được chạy đã tạo ra tệp ngsw-config.json. Nó chỉ chịu trách nhiệm service workers. Đồng thời, service workers cũng đã được tự động thêm vào file app.module.ts.
- 
+ ```ruby
  // app.module.ts
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 })
 
 export class AppModule { }
+ ```
 
 ## Build & Cấu hình Production với http-server
 Cài đặt http-server global từ NPM: **npm install -g http-server**
