@@ -9,13 +9,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [...], <br>
+  declarations: [...], 
   imports: [ <br>
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) <br>
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) 
   ],<br>
-  providers: [...], <br>
-  bootstrap: [...],<br>
-  schemas: [...]<br>
+  providers: [...], 
+  bootstrap: [...],
+  schemas: [...]
 })
 
 export class AppModule { }
