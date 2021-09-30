@@ -1,5 +1,5 @@
 ## Thêm PWA vào Angular
-Để thiết lập Angular service worker trong dự án, hãy sử dụng lệnh CLI ng add @ angle / pwa. Lệnh “ng add angular pwa” sẽ hiện thực hoá việc này
+Để thiết lập Angular service worker trong dự án, hãy sử dụng lệnh CLI ng add @ angle / pwa. Lệnh “ng add @angular/pwa” sẽ hiện thực hoá việc này
  **ng add @angular/pwa**
  
 - Lệnh “ng add angular pwa” được chạy đã tạo ra tệp ngsw-config.json. Nó chỉ chịu trách nhiệm service workers. Đồng thời, service workers cũng đã được tự động thêm vào file app.module.ts.
